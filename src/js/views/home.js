@@ -24,6 +24,7 @@ export function Home() {
 	return(
 		<div>
 			<HomeGrid people={people} planets={planets}/>
+			<p>hello</p>
 		</div>
 	)
 }
