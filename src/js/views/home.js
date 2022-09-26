@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/home.css";
-import {CardPeople} from '../component/CardPeople';
-import {CardPlanet} from '../component/CardPlanet';
-
+import { HomeGrid } from "../component/HomeGrid";
 export function Home() {
 	const [people, setPeople] = useState([]);
-	const [planet, setPlanet] = useState([]);
+	const [planets, setPlanet] = useState([]);
 
 	useEffect(() => {
 		async function fetchPeople() {
@@ -22,11 +20,10 @@ export function Home() {
 		fetchPlanets();
 	}, []);
 	console.log(people);
-	console.log(planet);
+	console.log(planets);
 	return(
 		<div>
-			<CardPeople people={people}/>
-			<CardPlanet planet={planet}/>
+			<HomeGrid people={people} planets={planets}/>
 		</div>
 	)
 }
