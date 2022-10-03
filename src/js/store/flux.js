@@ -26,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			favorite: [
-
+					
 			]
 		},
 		actions: {
@@ -83,7 +83,6 @@ const getState = ({ getStore, getActions, setStore }) => {
   					favorite.push(people);
 					setStore({"favorite": favorite});
 				}
-				console.log(favorite)
 			}
 		}
 	};
