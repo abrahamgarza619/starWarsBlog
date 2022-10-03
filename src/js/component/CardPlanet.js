@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 
-export const CardPlanet = ( {name, population, terrain, key} ) => {
+export const CardPlanet = ( {name, population, terrain, key, planet} ) => {
     const { actions } = useContext(Context);
 
     return (
@@ -14,7 +14,7 @@ export const CardPlanet = ( {name, population, terrain, key} ) => {
     <ul className="list-group list-group-flush">
     <li className="list-group-item">Population: {population}</li>
     <li className="list-group-item">Terrain: {terrain}</li>
-    <button type="button" onClick={() => actions.setFavorite(person)}>Click Me!</button>
+    <button type="button" onClick={() => actions.setFavorite(planet)}>Click Me!</button>
   </ul>
   <Link className="btn btn-primary" to={name}>learn more!</Link>
   </div>

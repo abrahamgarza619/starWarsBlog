@@ -18,7 +18,7 @@ export const HomeGrid = () => {
             <input type="range" class="form-range" id="customRange1"></input>
             {planets.map((planet, i) => {
                 return (
-                    <CardPlanet name={planet.name} terrain={planet.terrain} population={planet.population} key={uuidv4()} />
+                    <CardPlanet name={planet.name} terrain={planet.terrain} population={planet.population} planet={planet} key={uuidv4()} />
                 )
             })}
         </div>

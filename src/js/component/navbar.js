@@ -7,7 +7,6 @@ import { func } from "prop-types";
 export const Navbar = () => {
 	const store = useContext(Context);
 	const favorite = store.store.favorite;
-	console.log(favorite ==- null)
 	const placeholder = (
 		<a className="dropdown-item" href="#nogo">
 			Add favorites
@@ -20,9 +19,9 @@ export const Navbar = () => {
       </Link>
       <div className="ml-auto">
 	  	<Dropdown count={favorite.length}>
-			{ favorite ==- null ? placeholder : favorite.map((elm) => {
+			{ favorite ==- null ? placeholder : favorite.map((elm, i) => {
 				return (
-					<a className="dropdown-item" href="#nogo">
+					<a className="dropdown-item" href="#nogo" key={i}>
 						{elm.name}
 				  	</a>
 				)
