@@ -1,3 +1,5 @@
+import { element } from "prop-types";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -22,8 +24,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				{
 					name: 'hello'
 				}
+			],
+			favorite: [
+				
 			]
-			
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -57,6 +61,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			removeFavorite: (people) => {
+				const store = getStore();
+				const favorite = store.favorite.filter((elm) => {
+					if (elm.name != people.name) {
+						return true
+					}
+					else return false
+				})
+				console.log(favorite);
+				setStore({"favorite": favorite})
+			},
+			setFavorite: (people) => {
+				const store = getStore();
+				const favorite = store.favorite;
+
+				const index = favorite.findIndex(object => object.name === people.name);
+
+				if (index === -1) {
+  					favorite.push(people);
+				}
+				setStore({"favorite": favorite});
+				console.log(favorite)
 			}
 		}
 	};

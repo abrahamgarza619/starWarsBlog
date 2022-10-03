@@ -10,7 +10,6 @@ export const HomeGrid = () => {
 	const people = tiendita.store.people;
     return(
         <div>
-            {console.log(tiendita)}
             {people.map((person, i) => {
                 return (
                     <CardPeople name={person.name} gender={person.gender} key={uuidv4()} hair_color={person.hair_color} eye_color={person.eye_color} person={person} />
